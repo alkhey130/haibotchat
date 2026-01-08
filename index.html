@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Haibot</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Design - Interface Élégante</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #150442;
+            --primary-dark: #61e546;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #000000;
+            --light: #f8fafc;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            padding-bottom: 100px; /* Espace pour le bouton WhatsApp */
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-xl);
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 2.5rem;
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-lg);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a:hover {
+            background: var(--gray-100);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            border-radius: var(--radius-xl);
+            padding: 4rem 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .card p {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--gray-600);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Form */
+        .form-container {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            box-shadow: var(--shadow-xl);
+            margin-bottom: 3rem;
+            border: 1px solid var(--gray-200);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-lg);
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--gray-50);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+            background: white;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--radius-lg);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            border: 1px solid var(--gray-300);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gray-200);
+            transform: translateY(-2px);
+        }
+
+        .btn-lg {
+            padding: 1.25rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Table */
+        .table-container {
+            background: white;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 3rem;
+            border: 1px solid var(--gray-200);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        th {
+            padding: 1.25rem 1.5rem;
+            text-align: left;
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+
+        tbody tr:hover {
+            background: var(--gray-50);
+        }
+
+        td {
+            padding: 1.25rem 1.5rem;
+            color: var(--gray-700);
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-lg);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-success {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+
+        .status-warning {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--warning);
+        }
+
+        .status-danger {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--danger);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-xl);
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--gray-100);
+            border-radius: 50%;
+            color: var(--gray-700);
+            font-size: 1.25rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: var(--shadow-xl);
+            cursor: pointer;
+            z-index: 1000;
+            transition: var(--transition);
+            border: 3px solid white;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-button .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--danger);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+            animation: bounce 2s infinite;
+        }
+
+        .whatsapp-chat {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            width: 350px;
+            background: white;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            z-index: 999;
+            display: none;
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+            transform-origin: bottom right;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        .whatsapp-chat.active {
+            display: block;
+        }
+
+        .whatsapp-header {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            padding: 1.5rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .whatsapp-header i {
+            font-size: 1.5rem;
+        }
+
+        .whatsapp-header h4 {
+            flex: 1;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .whatsapp-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .whatsapp-close:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-body {
+            padding: 1.5rem;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .whatsapp-message {
+            margin-bottom: 1rem;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-lg);
+            max-width: 80%;
+            position: relative;
+        }
+
+        .message-received {
+            background: var(--gray-100);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .message-sent {
+            background: linear-gradient(135deg, #DCF8C6, #E2FFE8);
+            margin-left: auto;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message-time {
+            font-size: 0.7rem;
+            color: var(--gray-500);
+            text-align: right;
+            margin-top: 0.25rem;
+        }
+
+        .whatsapp-input {
+            padding: 1rem;
+            border-top: 1px solid var(--gray-200);
+            background: var(--gray-50);
+        }
+
+        .whatsapp-input form {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .whatsapp-input input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+        }
+
+        .whatsapp-input input:focus {
+            outline: none;
+            border-color: #25D366;
+        }
+
+        .whatsapp-input button {
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            width: 45px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .whatsapp-input button:hover {
+            background: #128C7E;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            
+            .nav-links a {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-container {
+                padding: 2rem 1rem;
+            }
+            
+            .whatsapp-chat {
+                width: calc(100vw - 40px);
+                right: 20px;
+                bottom: 100px;
+            }
+            
+            .whatsapp-button {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .pulse:hover {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse-whatsapp {
+            0%, 100% {
+                box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            }
+            50% {
+                box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* WhatsApp Status */
+        .whatsapp-status {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: var(--shadow-md);
+            z-index: 1001;
+            font-size: 0.9rem;
+            color: var(--gray-700);
+            border: 1px solid var(--gray-200);
+        }
+
+        .whatsapp-status i {
+            color: #25D366;
+            font-size: 1.2rem;
+        }
+
+        .whatsapp-status span {
+            font-weight: 600;
+            color: #128C7E;
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Status -->
+    
+    </div>
+
+    <!-- Navigation -->
+    
+    
+    <!-- Hero Section -->
+
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats-grid fade-in">
+        <div class="stat-card">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Satisfaction clients</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Support disponible</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">10K+</div>
+            <div class="stat-label">Utilisateurs actifs</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Disponibilité</div>
+        </div>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="cards-grid fade-in">
+        <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-bolt"></i>
+            </div>
+            <h3>Performance optimale</h3>
+            <p>Profitez d'une vitesse d'exécution exceptionnelle grâce à notre architecture optimisée et nos algorithmes avancés.</p>
+            <button class="btn btn-primary">
+                <i class="fas fa-arrow-right"></i> Découvrir
+            </button>
+        </div>
+        
+        <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Sécurité maximale</h3>
+            <p>Vos données sont protégées par les dernières technologies de chiffrement et des protocoles de sécurité avancés.</p>
+            <button class="btn btn-primary">
+                <i class="fas fa-arrow-right"></i> En savoir plus
+            </button>
+        </div>
+        
+        <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Analyses avancées</h3>
+            <p>Obtenez des insights précieux grâce à nos outils d'analyse de données et de reporting en temps réel.</p>
+            <button class="btn btn-primary">
+                <i class="fas fa-arrow-right"></i> Explorer
+            </button>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-container fade-in">
+        <h2 style="margin-bottom: 2rem; text-align: center; font-size: 2rem;">Contactez-nous</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name"><i class="fas fa-user"></i> Nom complet</label>
+                <input type="text" id="name" class="form-control" placeholder="Votre nom" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Adresse email</label>
+                <input type="email" id="email" class="form-control" placeholder="votre@email.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="service"><i class="fas fa-cogs"></i> Service</label>
+                <select id="service" class="form-control" required>
+                    <option value="">Sélectionnez un service</option>
+                    <option value="support">Support technique</option>
+                    <option value="sales">Service commercial</option>
+                    <option value="partnership">Partenariat</option>
+                    <option value="other">Autre</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message"><i class="fas fa-comment"></i> Message</label>
+                <textarea id="message" class="form-control" rows="5" placeholder="Votre message..." required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                <i class="fas fa-paper-plane"></i> Envoyer le message
+            </button>
+            
+            <div style="text-align: center; margin-top: 1.5rem; color: var(--gray-600); font-size: 0.9rem;">
+                <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                Vous préférez WhatsApp ? <a href="#" id="whatsappContact" style="color: #25D366; font-weight: 600;">Cliquez ici pour discuter</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Table Section -->
+    <div class="table-container fade-in">
+        <h2 style="padding: 1.5rem 2rem 0; font-size: 1.75rem;">Statistiques récentes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Projet</th>
+                    <th>Statut</th>
+                    <th>Progression</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><i class="fas fa-project-diagram"></i> Refonte Interface</td>
+                    <td><span class="status status-success">✓ Complété</span></td>
+                    <td>100%</td>
+                    <td>15/12/2023</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-mobile-alt"></i> Application Mobile</td>
+                    <td><span class="status status-warning">⚠ En cours</span></td>
+                    <td>75%</td>
+                    <td>10/12/2023</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-server"></i> Migration Serveur</td>
+                    <td><span class="status status-danger">✗ En attente</span></td>
+                    <td>30%</td>
+                    <td>05/12/2023</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-chart-pie"></i> Dashboard Analytics</td>
+                    <td><span class="status status-success">✓ Complété</span></td>
+                    <td>100%</td>
+                    <td>01/12/2023</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <footer class="fade-in">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="WhatsApp" id="whatsappFooter" style="background: #25D366; color: white;">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            
+            <p style="margin-bottom: 1.5rem; color: var(--gray-600); max-width: 600px; margin-left: auto; margin-right: auto;">
+                Une interface moderne conçue avec passion pour offrir la meilleure expérience utilisateur. Simple, élégant et efficace.
+                <br><br>
+                <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                <strong>Support WhatsApp :</strong> Disponible du Dimanche au vendredi, 9h-18h
+            </p>
+            
+            <div class="copyright">
+                <p>© 2023 ModernDesign. Tous droits réservés.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+                    <a href="#" style="color: var(--primary); text-decoration: none;">Politique de confidentialité</a> | 
+                    <a href="#" style="color: var(--primary); text-decoration: none;">Conditions d'utilisation</a> |
+                    <a href="#" style="color: #25D366; text-decoration: none;"><i class="fab fa-whatsapp"></i> Contact WhatsApp</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button" id="whatsappButton">
+        <i class="fab fa-whatsapp"></i>
+        <div class="notification-badge">3</div>
+    </div>
+
+    <!-- WhatsApp Chat -->
+    <div class="whatsapp-chat" id="whatsappChat">
+        <div class="whatsapp-header">
+            <i class="fab fa-whatsapp"></i>
+            <h4>Support WhatsApp</h4>
+            <button class="whatsapp-close" id="closeChat">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="whatsapp-body" id="chatMessages">
+            <div class="whatsapp-message message-received">
+                <div>👋 Bonjour ! Comment pouvons-nous vous aider aujourd'hui ?</div>
+                <div class="message-time">09:15</div>
+            </div>
+            
+            <div class="whatsapp-message message-received">
+                <div>Nous sommes disponibles pour répondre à vos questions sur nos services, le support technique ou toute autre demande.</div>
+                <div class="message-time">09:15</div>
+            </div>
+            
+        </div>
+        
+        <div class="whatsapp-input">
+            <form id="whatsappForm">
+                <input type="text" placeholder="Tapez votre message..." id="chatInput" required>
+                <button type="submit">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observer tous les éléments à animer
+        document.querySelectorAll('.card, .stat-card, .form-container, .table-container, footer').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Gestion du formulaire
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulation d'envoi
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                this.reset();
+            }, 1500);
+        });
+
+        // Effet de pulsation sur le bouton CTA
+        const ctaButton = document.querySelector('.btn-primary.pulse');
+        setInterval(() => {
+            ctaButton.classList.toggle('pulse');
+        }, 3000);
+
+        // WhatsApp Functionality
+        const whatsappButton = document.getElementById('whatsappButton');
+        const whatsappChat = document.getElementById('whatsappChat');
+        const closeChat = document.getElementById('closeChat');
+        const whatsappForm = document.getElementById('whatsappForm');
+        const chatInput = document.getElementById('chatInput');
+        const chatMessages = document.getElementById('chatMessages');
+
+        // Toggle chat
+        whatsappButton.addEventListener('click', () => {
+            whatsappChat.classList.toggle('active');
+        });
+
+        closeChat.addEventListener('click', () => {
+            whatsappChat.classList.remove('active');
+        });
+
+        // Close chat when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!whatsappChat.contains(e.target) && !whatsappButton.contains(e.target)) {
+                whatsappChat.classList.remove('active');
+            }
+        });
+
+        // Send message
+        whatsappForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const message = chatInput.value.trim();
+            if (!message) return;
+            
+            // Add user message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'whatsapp-message message-sent';
+            userMessage.innerHTML = `
+                <div>${message}</div>
+                <div class="message-time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
+            `;
+            chatMessages.appendChild(userMessage);
+            
+            // Clear input
+            chatInput.value = '';
+            
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            // Simulate auto-reply after 1 second
+            setTimeout(() => {
+                const replies = [
+                    "Merci pour votre message ! Notre équipe vous répondra dans les plus brefs délais.",
+                    "Nous avons bien reçu votre demande. Un conseiller vous contactera rapidement.",
+                    "Votre question a été transmise à notre équipe de support.",
+                    "Nous sommes là pour vous aider. Pouvez-vous nous donner plus de détails ?",
+                    "Merci de votre intérêt pour nos services. Nous reviendrons vers vous rapidement."
+                ];
+                
+                const randomReply = replies[Math.floor(Math.random() * replies.length)];
+                
+                const botMessage = document.createElement('div');
+                botMessage.className = 'whatsapp-message message-received';
+                botMessage.innerHTML = `
+                    <div>${randomReply}</div>
+                    <div class="message-time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
+                `;
+                chatMessages.appendChild(botMessage);
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                // Update notification badge
+                const badge = whatsappButton.querySelector('.notification-badge');
+                const currentCount = parseInt(badge.textContent) || 0;
+                badge.textContent = currentCount + 1;
+                
+            }, 1000);
+        });
+
+        // Open WhatsApp from contact form link
+        document.getElementById('whatsappContact').addEventListener('click', (e) => {
+            e.preventDefault();
+            whatsappChat.classList.add('active');
+            
+            // Focus on input
+            setTimeout(() => {
+                chatInput.focus();
+            }, 300);
+        });
+
+        // Open WhatsApp from footer
+        document.getElementById('whatsappFooter').addEventListener('click', (e) => {
+            e.preventDefault();
+            whatsappChat.classList.add('active');
+        });
+
+        // Direct WhatsApp link (for real WhatsApp)
+        const directWhatsAppBtn = document.createElement('a');
+        directWhatsAppBtn.href = "https://wa.me/33612345678?text=Bonjour%20je%20suis%20intéressé%20par%20vos%20services";
+        directWhatsAppBtn.target = "_blank";
+        directWhatsAppBtn.style.cssText = `
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-md);
+            z-index: 998;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        `;
+        directWhatsAppBtn.innerHTML = `
+            <i class="fab fa-whatsapp"></i>
+            Message direct
+        `;
+        
+        // Add hover effect
+        directWhatsAppBtn.addEventListener('mouseenter', () => {
+            directWhatsAppBtn.style.transform = 'translateY(-5px)';
+            directWhatsAppBtn.style.boxShadow = '0 10px 25px rgba(37, 211, 102, 0.3)';
+        });
+        
+        directWhatsAppBtn.addEventListener('mouseleave', () => {
+            directWhatsAppBtn.style.transform = 'translateY(0)';
+            directWhatsAppBtn.style.boxShadow = 'var(--shadow-md)';
+        });
+        
+        document.body.appendChild(directWhatsAppBtn);
+
+        // Update phone number dynamically (you can change this)
+        function updatePhoneNumber(phone) {
+            directWhatsAppBtn.href = `https://wa.me/${phone}?text=Bonjour%20je%20suis%20intéressé%20par%20vos%20services`;
+        }
+
+        // Example: updatePhoneNumber("33612345678");
+
+        // Auto-open chat after 10 seconds of inactivity
+        let userActivity = false;
+        
+        document.addEventListener('click', () => {
+            userActivity = true;
+        });
+        
+        setTimeout(() => {
+            if (!userActivity && !whatsappChat.classList.contains('active')) {
+                // Uncomment to auto-open chat
+                // whatsappChat.classList.add('active');
+            }
+        }, 10000);
+
+        // Navigation smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Theme toggle (optional)
+        const themeToggle = document.createElement('button');
+        themeToggle.innerHTML = '<i class="fas fa-palette"></i>';
+        themeToggle.style.cssText = `
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        `;
+        
+        document.body.appendChild(themeToggle);
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                document.body.style.background = 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)';
+                document.body.style.color = '#f8fafc';
+            } else {
+                document.body.style.background = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
+                document.body.style.color = '#1e293b';
+            }
+        });
+    </script>
+</body>
+</html>
