@@ -36,7 +36,7 @@ const [showScrollBtn, setShowScrollBtn] = useState(false);
     setMessages((m) => [...m, { role: "user", content: text }]);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/chat", {
+      const res = await fetch("https://haibotchat1.onrender.com/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: text }),
