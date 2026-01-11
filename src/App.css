@@ -156,3 +156,10 @@ body {
   flex-direction: column;
 }
 
+.whatsapp-button,
+.direct-whatsapp,
+.whatsapp-float {
+    position: fixed;
+    z-index: 99999 !important;
+    pointer-events: auto !important;
+}
